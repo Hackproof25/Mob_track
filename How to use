@@ -1,0 +1,119 @@
+# Mobile Tracking System - User Manual
+
+This user manual provides detailed instructions on how to use the Mobile Tracking System.
+
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Requirements](#requirements)
+3. [Installation](#installation)
+4. [Configuration](#configuration)
+5. [Usage](#usage)
+6. [Example Log File](#example-log-file)
+7. [Troubleshooting](#troubleshooting)
+8. [FAQ](#faq)
+9. [License](#license)
+
+## Introduction
+
+The Mobile Tracking System is a Python-based tool designed to check for a specific IMEI number in a log file and send an email notification if the IMEI is found. It uses the `colorama` library for colorized terminal output.
+
+## Requirements
+
+- Python 3.x
+- `colorama` library
+
+## Installation
+
+1. **Clone the repository**:
+   ```sh
+   git clone https://github.com/Hackproof25/Mob_track.git
+   cd mob_track
+
+2. Install
+    pip install -r requirements.txt
+
+3. Configuration
+    Email Setup
+    Before running the script, you need to configure the email settings which will be used to send notifications. The following details are required:
+
+        * Sender email address
+        * Receiver email address
+        * Sender email password
+        * SMTP server address
+        * SMTP server port
+
+    Example
+    Here's an example of the information you need to provide:
+
+        * Sender email address: your_email@example.com
+        * Receiver email address: receiver_email@example.com
+        * Sender email password: your_email_password
+        * SMTP server address: smtp.example.com
+        * SMTP server port: 465
+4. Usage
+    Run the script and follow the prompts to input the necessary details:
+    python mob_track.py
+
+You will be prompted to enter the following information:
+
+    1 Path to the log file
+    2 Target IMEI number
+    3 Check interval in seconds
+    4 Sender email address
+    5 Receiver email address
+    6 Sender email password
+    7 SMTP server address
+    8 SMTP server port
+
+5. Example usage
+    python mob_track.py
+
+6. Prompts
+    Mobile Tracking System
+    Please provide the following details:
+    Enter the path to the log file: path/to/your/logfile.log
+    Enter the target IMEI number: 123456789012345
+    Enter the check interval in seconds: 60
+    Enter the sender email address: your_email@example.com
+    Enter the receiver email address: receiver_email@example.com
+    Enter the sender email password: your_email_password
+    Enter the SMTP server address: smtp.example.com
+    Enter the SMTP server port: 465
+
+    The script will then start monitoring the log file for the target IMEI number and send an email notification if it is found.
+
+7. Example Log File
+   Create an example log file named example.log to illustrate the format expected by the script:
+
+   2024-05-22 14:33:21 INFO IMEI: 123456789012345 Some log entry
+   2024-05-22 14:34:22 INFO IMEI: 987654321098765 Another log entry
+
+8. Troubleshooting
+   Common Issues
+   1.SMTP Authentication Error:
+   * Make sure you have entered the correct email address, password, SMTP server, and port.
+   * Check if your email provider requires an app-specific password or additional security settings.
+
+   2.File Not Found Error:
+   * Ensure the path to the log file is correct and the file exists.
+
+   3.No Email Received:
+
+   * Check your spam or junk folder.
+   * Verify the receiver email address.
+   * Ensure that the SMTP server settings are correct.
+
+9. Debugging
+   * Add print statements in the code to check the values of variables at different stages.
+   * Check the logs of your SMTP server for any issues related to email sending.
+
+10. FAQ
+Q-   Can I use a different email service?
+A-   Yes, you can use any email service that supports SMTP. Just update the SMTP server address and port accordingly.
+
+Q-   How often does the script check the log file?
+A-   The script checks the log file at the interval specified during the setup (in seconds).
+
+Q-   Can I monitor multiple IMEI numbers?
+A-   Currently, the script supports monitoring one IMEI number at a time. You can modify the script to support multiple IMEI numbers if needed.

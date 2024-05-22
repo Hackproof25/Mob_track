@@ -1,0 +1,8 @@
+Explanation
+
+1. Colorama Initialization: The `colorama` library is initialized with `init(autoreset=True)` to automatically reset colors after each print statement.
+2. Formatted Print Statements: The `print` statements are updated to use colors:
+   - Fore.GREEN and Style.BRIGHT for the main title.
+   - Fore.YELLOW for the instruction prompt.
+   - Fore.CYAN for the user input prompts.
+   - Fore.RED for the alert message when the IMEI is detected.
